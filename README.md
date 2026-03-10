@@ -2,14 +2,34 @@
 
 Platform manajemen katalog penerbitan digital — mengelola Books, Authors, dan Publishers dengan autentikasi JWT.
 
-Dibangun dengan peruntukan sebagai technical test fullstack engineer
+Dibangun sebagai technical test fullstack engineer.
 
 ## Stack
 
 **Backend:** Express.js · TypeScript · Prisma v7 · PostgreSQL (Neon) · JWT · Zod  
 **Frontend:** Next.js 14 · TailwindCSS · shadcn/ui · Zustand · Axios
 
-## Cara Menjalankan
+## Demo
+
+|                 | URL                                                         |
+| --------------- | ----------------------------------------------------------- |
+| **Frontend**    | https://publisher-library.vercel.app                        |
+| **Backend API** | https://yummy-brigitta-athalla-portfolio-7e18000b.koyeb.app |
+
+```
+Email    : admin@publishing.com
+Password : password123
+```
+
+## Deployment
+
+- **Vercel** — hosting frontend Next.js
+- **Koyeb** — hosting backend Express.js
+- **Neon** — managed PostgreSQL (cloud)
+
+Flow: `Vercel (FE) → Koyeb (BE) → Neon (DB)`
+
+## Cara Menjalankan Lokal
 
 ### Backend
 
@@ -19,7 +39,7 @@ npm install
 cp .env.example .env        # isi DATABASE_URL dan JWT_SECRET
 npm run db:migrate
 npm run db:seed
-npm run dev                  # http://localhost:5000
+npm run dev                  # http://localhost:8000
 ```
 
 ### Frontend
@@ -27,15 +47,8 @@ npm run dev                  # http://localhost:5000
 ```bash
 cd frontend
 npm install
-cp .env.example .env.local   # isi NEXT_PUBLIC_API_URL=http://localhost:5000
+cp .env.example .env.local   # isi NEXT_PUBLIC_API_URL=http://localhost:8000
 npm run dev                  # http://localhost:3000
-```
-
-### Demo Login
-
-```
-Email    : admin@publishing.com
-Password : password123
 ```
 
 ## Fitur
